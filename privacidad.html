@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Privacidad y términos | Genius</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Big+Shoulders+Display:wght@600;700;800&family=Instrument+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/cliente.css">
+  <link rel="icon" type="image/png" href="img/favicon.png">
+</head>
+<body>
+  <header class="top">
+    <div class="marca"><img class="marca-logo" src="img/logo-genius.png" alt="Genius"><span>Protección y detailing automotriz</span></div>
+    <nav class="top-links"><a class="admin-link" href="index.html">Cotizar</a><a class="admin-link" href="cuenta.html">Mi cuenta</a></nav>
+  </header>
+  <main class="legal">
+    <h1>Privacidad y términos</h1>
+    <p class="nota-legal">Texto base del prototipo. Antes de publicar el sitio, los socios deben revisarlo (idealmente con un abogado) y ajustarlo a cómo trabajan realmente.</p>
+
+    <h2 id="privacidad">Aviso de privacidad</h2>
+    <p><b data-emp="razonSocial">Detailing AKNB EIRL</b> (Genius), RUT <span data-emp="rut">77.903.613-8</span>, es responsable de los datos personales que entregas en este sitio.</p>
+    <h3 style="margin-top:18px">Qué datos recibimos</h3>
+    <ul>
+      <li>Nombre, RUT, correo y teléfono, cuando creas tu cuenta.</li>
+      <li>Marca, modelo y patente de tu vehículo, y las fotos que subas.</li>
+      <li>Tus cotizaciones, los trabajos realizados y los pagos asociados.</li>
+    </ul>
+    <h3 style="margin-top:18px">Para qué los usamos</h3>
+    <ul>
+      <li>Responder tus cotizaciones y coordinar el trabajo en tu vehículo.</li>
+      <li>Mostrarte en Mi cuenta cómo va tu trabajo, con fotos y avisos.</li>
+      <li>Emitir cotizaciones, certificados y documentos tributarios.</li>
+      <li>Avisarte cuando toca la mantención de tu tratamiento, por correo o WhatsApp. Puedes elegir el canal en Mi cuenta.</li>
+    </ul>
+    <p style="margin-top:14px">No vendemos tus datos ni los compartimos con terceros, salvo que la ley lo exija o que un proveedor los necesite para prestarnos el servicio (por ejemplo, el hosting).</p>
+    <h3 style="margin-top:18px">Cuánto tiempo los guardamos</h3>
+    <p>Mientras tengas una cuenta activa o la ley nos obligue a conservar los documentos del trabajo.</p>
+    <h3 style="margin-top:18px">Tus derechos</h3>
+    <p>Puedes pedirnos acceder a tus datos, corregirlos, eliminarlos u oponerte a su uso, según la Ley N° 19.628 y la normativa que la reemplaza. Escríbenos a <a href="#" data-correo>nuestro correo</a>.</p>
+
+    <h2 id="terminos">Términos de la cotización</h2>
+    <ul>
+      <li>El precio que ves en el cotizador es un <b>rango referencial</b>. El valor final lo confirma un socio de Genius después de evaluar tu vehículo, con fotos o en el taller.</li>
+      <li>Todos los valores son <b>netos, más IVA</b>.</li>
+      <li>Para reservar la fecha se pide un <b>abono</b>, que se informa en la cotización formal. El saldo se paga al retirar el vehículo.</li>
+      <li>El plazo estimado de trabajo se informa en la cotización y puede variar según el servicio, el clima y los tiempos de curado del producto. Te avisamos si cambia.</li>
+      <li>La cotización formal tiene una vigencia indicada en el documento. Pasada esa fecha, los valores pueden cambiar.</li>
+      <li>Los tratamientos con certificado tienen las condiciones de garantía y mantención que indica el certificado.</li>
+      <li>Si el vehículo tiene daños previos, los registramos con fotos antes de empezar.</li>
+    </ul>
+    <p style="margin-top:22px"><a class="btn" href="index.html">Volver al cotizador</a></p>
+  </main>
+  <script src="js/plantillas.js"></script>
+  <script>
+    (function () {
+      var e = window.GENIUS_PLANTILLAS && window.GENIUS_PLANTILLAS.empresa; if (!e) return;
+      document.querySelectorAll('[data-emp]').forEach(function (n) { if (e[n.dataset.emp]) n.textContent = e[n.dataset.emp]; });
+      document.querySelectorAll('[data-correo]').forEach(function (a) { a.href = 'mailto:' + e.correo; a.textContent = e.correo; });
+    })();
+  </script>
+</body>
+</html>

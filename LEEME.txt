@@ -1,0 +1,81 @@
+GENIUS · BOSQUEJO DEL SISTEMA (prototipo)
+=========================================
+
+CÓMO VERLO EN VISUAL STUDIO CODE
+1. Abre la carpeta "genius-sistema" (Archivo > Abrir carpeta).
+2. Instala la extensión "Live Server" (Ritwick Dey).
+3. Clic derecho en index.html > "Open with Live Server".
+   (También sirve hacer doble clic en index.html: abre en el navegador.)
+
+PÁGINAS
+- cuenta.html  Mi cuenta (cliente): en qué etapa va su vehículo (barra de progreso), avances con fotos, cotizaciones e historial.
+              Cuenta de prueba: RUT 11.111.111-1, contraseña demo1234.
+- index.html  Cotizador del cliente (al enviar pide crear cuenta con RUT, correo y contraseña): marca y modelo > servicios > piezas sobre el dibujo > datos.
+              El precio se arma solo y siempre se muestra como RANGO.
+- admin.html  Panel de socios. Contraseña de prueba: genius
+              Cotizaciones (con las fotos del cliente), Clientes, Trabajos (etapas + subir avances con fotos),
+              Historial (vehículos entregados), Finanzas (semanal, mensual, anual), Documentos y Catálogo y precios.
+
+- documento.html  Generador de cotización y certificado en PDF (se abre desde el panel > Documentos,
+              desde el detalle de una cotización "Crear cotización en PDF" o desde un trabajo "Crear certificado").
+              La socia llena el formulario, revisa la hoja y pulsa "Guardar y descargar PDF"
+              (en la ventana de impresión elige "Guardar como PDF").
+
+IMPORTANTE
+- Todo se guarda en el navegador (localStorage), no hay servidor ni base de datos.
+  Lo que cotiza un "cliente" en index.html aparece en admin.html, pero solo en el mismo navegador.
+- Los precios son DE EJEMPLO. Para usar los reales:
+  a) edita los números en js/datos.js (precios por pieza para un hatchback, y "base" de los niveles), o
+  b) cámbialos en admin.html > Catálogo y precios.
+- Rango mostrado: 92% a 115% del total (js/datos.js > rango). Factor por carrocería: sedán 1.05, SUV 1.2, camioneta 1.3, van 1.4.
+- Las fotos se reducen y se guardan en el navegador (poco espacio: unas decenas). En la versión real irán al servidor.
+- Las contraseñas del prototipo NO son seguras (todo vive en el navegador). La versión real usará PHP con password_hash.
+- Los datos de ejemplo se regeneran con fechas recientes; "Restablecer datos de ejemplo" los vuelve a crear.
+- "Restablecer datos de ejemplo" (arriba en el panel) vuelve todo al inicio.
+
+ARCHIVOS
+- js/datos.js      Catálogo, precios, vehículos y datos de ejemplo.
+- js/autos.js      Dibujos por carrocería (hatchback, sedán, coupé, SUV, camioneta, van).
+- js/plantillas.js Datos de la empresa, textos y secciones rápidas de los documentos (precios de la cotización L200).
+- img/            Cabecera, logo, web y sello tomados de los PDF de Genius.
+- js/cotizador.js  Lógica del cotizador.   js/admin.js  Lógica del panel.
+- css/cliente.css, css/admin.css  Estilos.
+
+PRÓXIMAS FASES (ya marcadas en el panel)
+Versión real con PHP + MySQL en el hosting, subdominio enlazado desde la web actual, pagos, materiales, calendario, WhatsApp/PDF, postventa y reportes.
+
+NOVEDADES (línea de tiempo y transiciones)
+- Con más de un servicio, el paso 3 muestra una línea de tiempo por fases arriba. Los servicios de una sola opción (sellado, láminas, polarizado) avanzan solos al elegir; los de piezas (PPF, wrap, pulido) usan el botón "Listo, siguiente servicio".
+- Hay una lista de piezas con botones, útil en celular.
+- Transiciones suaves en cotizador, Mi cuenta, panel de socios (cambio de vista, ventanas, avisos, tablero de trabajos, gráficos) y documentos.
+- Si el sistema operativo tiene "reducir movimiento" activado, las animaciones se desactivan.
+
+NOVEDADES (mejoras 1, 2, 4, 6, 8, 9, 10, 11, 14, 16, 17, 18, 22)
+Cliente
+- Borrador: la cotización se guarda sola; al volver aparece "Retomar" o "Empezar de nuevo".
+- Vehículos guardados: cada cotización guarda el vehículo en la cuenta; se eligen con un clic y se pueden quitar en Mi cuenta.
+- Entrega estimada, novedades (avisos de etapa, avances, fechas, cobros y documentos), mantenciones a los 3, 6 y 12 meses, elegir canal de aviso (correo, WhatsApp o ambos).
+- Mis documentos: cotizaciones y certificados que los socios publiquen, con "Ver y descargar PDF".
+- Recuperar contraseña con código (en el prototipo el código se muestra en pantalla).
+- Botón "Consultar por WhatsApp" en cada cotización.
+- privacidad.html: aviso de privacidad y términos, con casilla al crear cuenta y al enviar la cotización. Texto base: revisarlo con un abogado.
+Socios
+- Mensajes: bandeja con cada aviso al cliente y botones WhatsApp / Correo (abren el mensaje ya escrito).
+- Fecha estimada de entrega y mensajes rápidos al publicar avances (editables en Catálogo).
+- Por cobrar (Panel) y "Recordar cobro" (también dentro de cada trabajo).
+- Buscador global arriba (Ctrl+K): cliente, RUT, teléfono, folio o patente.
+- Descargar para Excel (archivo CSV): se activa en Catálogo > Opciones del sistema, solo si los socios quieren.
+- En Documentos, cada cotización o certificado nuevo tiene la casilla "Mostrar en Mi cuenta del cliente".
+
+PARA CUANDO TENGAMOS EL HOSTING (no se hace en el prototipo)
+- Envío automático de correos y WhatsApp (hoy es manual desde Mensajes) y el correo con el código de recuperación.
+- PDF generado en el servidor (hoy se usa "Guardar como PDF" del navegador).
+- PHP + MySQL, contraseñas con password_hash, fotos como archivos, subdominio con HTTPS, respaldos y precios reales (puntos 23 a 28 de la lista).
+
+NOVEDADES (identidad visual)
+- Colores tomados de la marca: negro, azul eléctrico y blanco/plata (mismos de la presentación y del logo).
+  Cliente y Mi cuenta en tema oscuro; panel de socios con menú lateral negro y contenido claro.
+- Logo de Genius en la cabecera del cotizador, Mi cuenta, privacidad, login y menú del panel, y en el editor de documentos.
+- Los documentos impresos (cotización y certificado) no cambian: siguen con su cabecera y logo originales.
+- Para ajustar los colores: variables al inicio de css/cliente.css, css/admin.css y css/documento.css (--tape es el azul de acento).
+- Pendiente: afinar los tonos exactos contra la página geniuschile.com (no se pudieron leer sus estilos desde aquí).

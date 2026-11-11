@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Panel de socios | Genius</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Big+Shoulders+Display:wght@600;700;800&family=Instrument+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/admin.css">
+  <link rel="icon" type="image/png" href="img/favicon.png">
+</head>
+<body>
+  <div id="login" class="login" hidden>
+    <form id="loginForm" class="login-caja" autocomplete="off">
+      <div class="login-marca"><img src="img/logo-genius.png" alt="Genius"></div>
+      <h1>Panel de socios</h1>
+      <p class="mute">Acceso de prueba. La versión real tendrá usuarios y contraseñas propias.</p>
+      <label>Contraseña
+        <input type="password" id="loginPass" placeholder="genius" autofocus>
+      </label>
+      <p class="error" id="loginError" hidden>Contraseña incorrecta. En el prototipo es: genius</p>
+      <button class="btn" type="submit">Entrar</button>
+      <a class="volver" href="index.html">Ir al cotizador de clientes</a>
+    </form>
+  </div>
+
+  <div id="app" class="app" hidden>
+    <aside class="lateral" id="lateral"></aside>
+    <div class="cuerpo">
+      <div class="banner-demo">
+        <span>Datos de ejemplo guardados en este navegador.</span>
+        <button type="button" id="btnReset" class="link-btn">Restablecer datos de ejemplo</button>
+      </div>
+      <div class="barra-sup"><div class="gbusca"><input id="gb" type="search" placeholder="Buscar cliente, folio o patente (Ctrl+K)" autocomplete="off" aria-label="Buscar en todo el panel"><div id="gbRes" class="gb-res" hidden></div></div></div>
+      <main id="vista" class="vista"></main>
+    </div>
+  </div>
+
+  <div id="modal" class="modal" hidden>
+    <div class="modal-caja" role="dialog" aria-modal="true" id="modalCaja"></div>
+  </div>
+  <div id="toasts" class="toasts" aria-live="polite"></div>
+
+  <script src="js/datos.js"></script>
+  <script src="js/comun.js"></script>
+  <script src="js/admin.js"></script>
+</body>
+</html>

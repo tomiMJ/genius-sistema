@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Cotiza tu servicio | Genius</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Big+Shoulders+Display:wght@600;700;800&family=Instrument+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/cliente.css">
+  <link rel="icon" type="image/png" href="img/favicon.png">
+</head>
+<body>
+  <header class="top">
+    <div class="marca"><img class="marca-logo" src="img/logo-genius.png" alt="Genius"><span>Protección y detailing automotriz</span></div>
+    <nav class="top-links"><a class="admin-link" id="cuentaLink" href="cuenta.html">Mi cuenta</a><a class="admin-link" href="admin.html">Socios</a></nav>
+  </header>
+  <div class="aviso" id="aviso"></div>
+
+  <main class="layout">
+    <section class="principal" aria-live="polite">
+      <nav class="pasos" id="pasos" aria-label="Pasos de la cotización"></nav>
+      <div id="paso"></div>
+    </section>
+    <aside class="resumen" id="resumen" aria-label="Resumen de tu cotización"></aside>
+  </main>
+
+  <div class="barra-movil" id="barraMovil"></div>
+
+  <script src="js/datos.js"></script>
+  <script src="js/comun.js"></script>
+  <script src="js/autos.js"></script>
+  <script src="js/cotizador.js"></script>
+</body>
+</html>
